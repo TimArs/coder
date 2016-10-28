@@ -16,6 +16,7 @@ string = STDIN.gets.chomp
 puts "Каким способом хотите зашифровать?"
 puts "1.MD5"
 puts "2.SHA1"
+puts "3.SHA2"
 
 user_choice = STDIN.gets.to_i
 
@@ -24,6 +25,8 @@ puts "Вот, что получилось :"
 if (user_choice == 1)
 
   puts Digest::MD5.hexdigest string
-else
+elsif (user_choice == 2)
   puts Digest::SHA1.hexdigest string
+else
+  puts Digest::SHA2.hexdigest string
 end
